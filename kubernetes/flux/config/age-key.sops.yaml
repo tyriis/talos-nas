@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Secret
 metadata:
-    name: sops-age
+    name: age-key
     namespace: flux-system
     labels:
         kustomize.toolkit.fluxcd.io/prune: disabled
@@ -23,8 +23,8 @@ sops:
             bjBRYmpUQm51QlE0TzY3UGE2L3dDeFEK+4M7zghsObKmFxjVJY8/+O5MUXKAnIDs
             NSdVsX0CjAubU15z+2Koqhqz2KPe4FOgF5Qo2AnpH4GSNvc/jlYHiw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2023-02-27T22:52:09Z"
-    mac: ENC[AES256_GCM,data:+/vLr0rvi2pyYBDNLjH3h6na3I+HaU9xC5P859FBuWp85CEYvNmZhwwmIelRwNKWrKLpNeJ97f8WTuI2Am8g3ag3Ex5pvkixaq2iznCKVpLxK92VUziWYp6mOpG6q7sC1+1685D8RNe319MuitfX84F2jRDOI0gZh//kr5ftKOc=,iv:xcxsTRa2IldYxVbD1ni8CmtQ48qTIAgFjL8PaIpE3f4=,tag:rWaJlPIw+CtHpAEqiKj8Vw==,type:str]
+    lastmodified: "2023-03-18T23:36:14Z"
+    mac: ENC[AES256_GCM,data:TvWuBflbZ4CTVRdckoXdtfC9sNndJQOW4bIhGLqNXH91EzO4eqVcjuJBWg/F4xnpRYO++4JtZpOV/jtIdur8JE7P5YehcYj/Y1v0oKNcL44YB8isoKIl+S7SpzQ12d4/GCs19dGu8IXcFTMO1OxgNBKWcHpWwk3thN5+AT2A8Yw=,iv:2pWp6aU4UftbJeuXsMwFFskW8h7KeyVfFA+HYJH/ink=,tag:anU1+jAHgElsYRSBj9SYSw==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.7.3
