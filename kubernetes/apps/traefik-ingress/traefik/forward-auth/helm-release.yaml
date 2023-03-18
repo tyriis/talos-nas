@@ -38,9 +38,9 @@ spec:
       repository: thomseddon/traefik-forward-auth
       tag: v2.2.0
     env:
-      AUTH_HOST: &host auth.${SECRET_DOMAIN}
+      AUTH_HOST: &host auth.${SETTING_CLUSTERNAME}.${SECRET_DOMAIN}
       DOMAIN: ${SECRET_DOMAIN}
-      COOKIE_DOMAIN: ${SECRET_DOMAIN}
+      COOKIE_DOMAIN: ${SETTING_CLUSTERNAME}.${SECRET_DOMAIN}
       INSECURE_COOKIE: "false"
       URL_PATH: /_oauth
       LOG_LEVEL: info
@@ -59,7 +59,7 @@ spec:
         enabled: true
         ingressClassName: traefik
         annotations:
-          cert-manager.io/cluster-issuer: self-signed
+          cert-manager.io/cluster-issuer: letsencrypt-production
           kubernetes.io/tls-acme: "true"
           traefik.ingress.kubernetes.io/router.entrypoints: websecure
           traefik.ingress.kubernetes.io/router.middlewares: traefik-ingress-sso@kubernetescrd

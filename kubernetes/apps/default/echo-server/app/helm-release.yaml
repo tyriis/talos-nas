@@ -55,7 +55,7 @@ spec:
         enabled: true
         ingressClassName: traefik
         annotations:
-          cert-manager.io/cluster-issuer: self-signed
+          cert-manager.io/cluster-issuer: letsencrypt-production
           kubernetes.io/tls-acme: "true"
           traefik.ingress.kubernetes.io/router.middlewares: traefik-ingress-sso@kubernetescrd
           traefik.ingress.kubernetes.io/router.entrypoints: websecure
@@ -65,7 +65,7 @@ spec:
           hajimari.io/icon: video-input-antenna
           hajimari.io/enable: "true"
         hosts:
-          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
+          - host: &host "{{ .Release.Name }}.${SETTING_CLUSTERNAME}.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix

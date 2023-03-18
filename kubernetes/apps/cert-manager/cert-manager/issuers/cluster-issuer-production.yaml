@@ -2,14 +2,14 @@
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-  name: self-signed
+  name: letsencrypt-production
 spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
     email: "${SECRET_CLOUDFLARE_EMAIL}"
     # preferredChain: ISRG Root X1
     privateKeySecretRef:
-      name: self-signed
+      name: letsencrypt-production
     solvers:
       - dns01:
           cloudflare:
