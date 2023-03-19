@@ -1,2 +1,3 @@
 ---
-providerRegex: ^k(master|worker)\d\d?$
+providerRegex: |
+  ^(kube-nas)$
