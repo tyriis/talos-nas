@@ -34,6 +34,9 @@ spec:
       privileged: true
     service:
       main:
+        type: LoadBalancer
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: "${SETTING_METALLB_NFS_ADDR}"
         ports:
           nfs:
             port: 2049
