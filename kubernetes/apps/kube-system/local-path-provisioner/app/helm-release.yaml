@@ -35,7 +35,6 @@ spec:
     storageClass:
       defaultClass: true
       provisionerName: rancher.io/local-path
-      name:
     # Note: Do not enable Flux variable substitution on this HelmRelease
     configmap:
       setup: |-
