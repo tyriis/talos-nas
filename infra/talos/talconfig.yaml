@@ -45,12 +45,31 @@ controlPlane:
         value:
           feature-gates: GracefulNodeShutdown=true,MixedProtocolLBService=true
           rotate-server-certificates: "true"
-    # - "@./extraKernelArgs-patch.yaml"
     - |-
       - op: add
-        path: /cluster/extraManifests
+        path: /machine/kubelet/extraMounts
         value:
-          - https://raw.githubusercontent.com/alex1989hu/kubelet-serving-cert-approver/main/deploy/standalone-install.yaml
+          - destination: /var/mnt/usb1
+            type: bind
+            source: /var/mnt/usb1
+            options:
+              - bind
+              - rshared
+              - rw
+    - |-
+      - op: add
+        path: /machine/disks
+        value:
+          - device: /dev/sda
+            partitions:
+              - mountpoint: /var/mnt/usb1
+
+    # - "@./extraKernelArgs-patch.yaml"
+    # - |-
+    #   - op: add
+    #     path: /cluster/extraManifests
+    #     value:
+    #       - https://raw.githubusercontent.com/alex1989hu/kubelet-serving-cert-approver/main/deploy/standalone-install.yaml
 
   # configPatches:
   #   # deploy metrics server
