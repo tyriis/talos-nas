@@ -29,7 +29,7 @@ spec:
       strategy: Recreate
     image:
       repository: ghcr.io/tyriis/docker-nfs-server
-      tag: alpine-3.17.2
+      tag: v0.1.0
     securityContext:
       privileged: true
       capabilities:
