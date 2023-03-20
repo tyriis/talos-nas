@@ -48,5 +48,5 @@ spec:
       nfs:
         enabled: true
         type: hostPath
-        hotPath: /var/mnt/usb1/nfs
-          # type: DirectoryOrCreate
+        hostPath: /var/mnt/usb1/nfs
+        hostPathType: DirectoryOrCreate
