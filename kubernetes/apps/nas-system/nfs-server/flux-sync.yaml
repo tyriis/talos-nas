@@ -13,4 +13,5 @@ spec:
   sourceRef:
     kind: GitRepository
     name: kube-nas
+  timeout: 3m
   wait: true

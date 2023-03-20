@@ -14,3 +14,4 @@ spec:
     kind: GitRepository
     name: kube-nas
   wait: true
+  timeout: 3m
