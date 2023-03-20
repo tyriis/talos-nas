@@ -29,9 +29,9 @@ spec:
       strategy: Recreate
     image:
       repository: ghcr.io/tyriis/docker-nfs-server
-      tag: v0.1.0
+      tag: v0.1.1
     securityContext:
-      privileged: true
+      # privileged: true
       capabilities:
         add:
         - SYS_ADMIN
